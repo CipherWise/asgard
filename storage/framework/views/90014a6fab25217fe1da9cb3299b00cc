@@ -1,0 +1,39 @@
+<div class='form-group<?php echo e($errors->has("{$lang}[title]") ? ' has-error' : ''); ?>'>
+    <?php echo Form::label("{$lang}[title]", trans('menu::menu.form.title')); ?>
+
+    <?php echo Form::text("{$lang}[title]", Input::old("{$lang}[title]"), ['class' => 'form-control', 'placeholder' => trans('menu::menu.form.title'), 'autofocus']); ?>
+
+    <?php echo $errors->first("{$lang}[title]", '<span class="help-block">:message</span>'); ?>
+
+</div>
+<div class="form-group">
+    <?php echo Form::label("{$lang}[uri]", trans('menu::menu.form.uri')); ?>
+
+    <div class='input-group<?php echo e($errors->has("{$lang}[uri]") ? ' has-error' : ''); ?>'>
+        <span class="input-group-addon">/<?php echo e($lang); ?>/</span>
+        <?php echo Form::text("{$lang}[uri]", Input::old("{$lang}[uri]"), ['class' => 'form-control', 'placeholder' => trans('menu::menu.form.uri')]); ?>
+
+        <?php echo $errors->first("{$lang}[uri]", '<span class="help-block">:message</span>'); ?>
+
+    </div>
+</div>
+<div class="form-group<?php echo e($errors->has("{$lang}[url]") ? ' has-error' : ''); ?>">
+    <?php echo Form::label("{$lang}[url]", trans('menu::menu.form.url')); ?>
+
+    <?php echo Form::text("{$lang}[url]", Input::old("{$lang}[url]"), ['class' => 'form-control', 'placeholder' => trans('menu::menu.form.url')]); ?>
+
+    <?php echo $errors->first("{$lang}[url]", '<span class="help-block">:message</span>'); ?>
+
+</div>
+
+<div class="checkbox">
+    <label for="<?php echo e($lang); ?>[status]">
+        <input id="<?php echo e($lang); ?>[status]"
+                name="<?php echo e($lang); ?>[status]"
+                type="checkbox"
+                class="flat-blue"
+                value="1" />
+        <?php echo e(trans('menu::menu.form.status')); ?>
+
+    </label>
+</div>
